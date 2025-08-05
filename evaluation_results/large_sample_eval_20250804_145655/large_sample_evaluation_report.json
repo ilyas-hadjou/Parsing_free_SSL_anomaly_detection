@@ -1,0 +1,34 @@
+{
+  "dataset": "large_sample",
+  "timestamp": "2025-08-04T14:56:57.179871",
+  "model_config": {
+    "input_dim": 529,
+    "output_dim": 32,
+    "encoder_type": "gcn"
+  },
+  "results": {
+    "representation_quality": {
+      "embedding_variance": 0.0026920668315142393,
+      "embedding_norm": 0.4758395552635193,
+      "mean_cosine_similarity": 0.9592835307121277,
+      "std_cosine_similarity": 0.058522310107946396
+    },
+    "ssl_tasks": {
+      "masked_node_prediction_loss": 0.01293519139289856,
+      "edge_prediction_loss": 0.643617570400238,
+      "edge_prediction_auc": 0.9581163434903047,
+      "node_classification_loss": 1.104076623916626,
+      "node_classification_accuracy": 0.33143940567970276
+    },
+    "anomaly_detection": {
+      "isolation_forest": {
+        "accuracy": 0.332,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "auc_score": 0.5,
+        "threshold": 0.0
+      }
+    }
+  }
+}

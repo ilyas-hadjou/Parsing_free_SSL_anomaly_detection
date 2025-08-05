@@ -1,0 +1,42 @@
+{
+  "dataset": "hdfs",
+  "timestamp": "2025-08-04T16:18:13.633747",
+  "model_config": {
+    "input_dim": 10001,
+    "output_dim": 32,
+    "encoder_type": "gcn"
+  },
+  "results": {
+    "representation_quality": {
+      "embedding_variance": 0.0036186729557812214,
+      "embedding_norm": 0.3519796133041382,
+      "mean_cosine_similarity": 0.9799602627754211,
+      "std_cosine_similarity": 0.023177890107035637
+    },
+    "ssl_tasks": {
+      "masked_node_prediction_loss": 0.0007910977001301944,
+      "edge_prediction_loss": 0.5500515699386597,
+      "edge_prediction_auc": 0.977970399865976,
+      "node_classification_loss": 1.201655387878418,
+      "node_classification_accuracy": 0.029399998486042023
+    },
+    "anomaly_detection": {
+      "isolation_forest": {
+        "accuracy": 0.736,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "auc_score": 0.5,
+        "threshold": 0.0
+      },
+      "one_class_svm": {
+        "accuracy": 0.264,
+        "precision": 0.264,
+        "recall": 1.0,
+        "f1_score": 0.4177215189873418,
+        "auc_score": 0.5865905431122822,
+        "threshold": 0.0
+      }
+    }
+  }
+}

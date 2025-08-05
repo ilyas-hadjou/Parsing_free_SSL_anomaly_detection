@@ -1,0 +1,112 @@
+# Configuration file for LogGraph-SSL framework
+
+# Model Configuration
+MODEL:
+  input_dim: null  # Will be set automatically based on data
+  hidden_dims: [128, 64]
+  output_dim: 32
+  encoder_type: "gcn"  # Options: gcn, gat, sage
+  num_heads: 8  # For GAT only
+  dropout: 0.1
+  activation: "relu"  # Options: relu, gelu, tanh
+
+# Graph Construction
+GRAPH:
+  window_size: 5
+  min_token_freq: 2
+  max_vocab_size: 10000
+  token_pattern: "\\b\\w+\\b"
+  edge_threshold: 1.0
+
+# SSL Tasks
+SSL_TASKS:
+  masked_node_prediction:
+    enabled: true
+    mask_rate: 0.15
+    weight: 1.0
+  
+  edge_prediction:
+    enabled: true
+    neg_sampling_ratio: 1.0
+    weight: 0.5
+  
+  node_classification:
+    enabled: true
+    num_classes: 3
+    weight: 0.3
+  
+  graph_contrastive:
+    enabled: false
+    temperature: 0.07
+    augmentation_prob: 0.2
+    weight: 0.2
+
+# Training Configuration
+TRAINING:
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  num_epochs: 100
+  batch_size: 32
+  early_stopping:
+    enabled: true
+    patience: 20
+    min_delta: 0.001
+  
+  scheduler:
+    enabled: true
+    type: "reduce_on_plateau"  # Options: reduce_on_plateau, step, cosine
+    factor: 0.5
+    patience: 10
+  
+  checkpointing:
+    save_every: 10
+    save_best: true
+    save_final: true
+
+# Anomaly Detection
+ANOMALY_DETECTION:
+  methods: ["neural", "isolation_forest", "one_class_svm", "statistical"]
+  contamination: 0.1
+  sequence_length: 10
+  neural_detector:
+    hidden_dim: 64
+    dropout: 0.1
+
+# Data Configuration
+DATA:
+  preprocessing:
+    remove_timestamps: true
+    remove_ips: true
+    remove_hex: true
+    remove_numbers: true
+    remove_paths: true
+    normalize_whitespace: true
+  
+  splits:
+    train_ratio: 0.7
+    val_ratio: 0.15
+    test_ratio: 0.15
+
+# Evaluation
+EVALUATION:
+  metrics: ["accuracy", "precision", "recall", "f1_score", "auc_score"]
+  representation_quality: true
+  ssl_task_evaluation: true
+  visualization: true
+
+# Logging and Output
+LOGGING:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  log_file: null  # Set to file path to save logs
+  
+OUTPUT:
+  base_dir: "./outputs"
+  save_plots: true
+  save_embeddings: false
+  save_predictions: true
+
+# Hardware
+HARDWARE:
+  device: "auto"  # Options: auto, cpu, cuda, cuda:0, etc.
+  num_workers: 4
+  pin_memory: true

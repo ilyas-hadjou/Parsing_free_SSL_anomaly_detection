@@ -1,0 +1,18 @@
+{
+  "data_path": "hdfs_train.txt",
+  "output_dir": "./outputs",
+  "batch_size": 8,
+  "num_epochs": 15,
+  "learning_rate": 0.001,
+  "hidden_dims": [
+    128,
+    64
+  ],
+  "output_dim": 32,
+  "encoder_type": "gcn",
+  "window_size": 5,
+  "min_token_freq": 2,
+  "max_vocab_size": 10000,
+  "seed": 42,
+  "device": "auto"
+}
