@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # LogGraph-SSL JupyterLab Setup Script
-# This script helps set up the environment for high-performance techo "🔧🐛 If you encounter issues:"
+# This script helps set up the environment for high-performanecho ""
+echo "🔄 To update the code from GitHub:"
+echo "git pull origin main"
+echo ""
+echo "🔧🐛 If you encounter issues:"
 echo "- Check CUDA compatibility"
 echo "- Verify all files are present"
 echo "- Ensure sufficient disk space (>10GB recommended)"
