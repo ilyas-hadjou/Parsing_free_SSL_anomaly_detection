@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # LogGraph-SSL JupyterLab Setup Script
-# This script helps set up the environment for high-performance training
+# This script helps set up the environment for high-performance techo "🔧🐛 If you encounter issues:"
+echo "- Check CUDA compatibility"
+echo "- Verify all files are present"
+echo "- Ensure sufficient disk space (>10GB recommended)"
+echo "- Check the TRAINING_GUIDE.md for troubleshooting"ng
 
 echo "🚀 LogGraph-SSL JupyterLab Setup Script 🚀"
 echo "============================================="
@@ -21,8 +25,8 @@ else
 fi
 
 # Check if we're in the right directory
-if [ ! -f "LogGraph_SSL_HighPerformance_Training.ipynb" ]; then
-    echo "❌ Error: LogGraph_SSL_HighPerformance_Training.ipynb not found in current directory"
+if [ ! -f "LogGraph_SSL_Complete_Training.ipynb" ]; then
+    echo "❌ Error: LogGraph_SSL_Complete_Training.ipynb not found in current directory"
     echo ""
     echo "💡 If you haven't cloned the repository yet, run:"
     echo "git clone https://github.com/ilyas-hadjou/Parsing_free_SSL_anomaly_detection.git"
@@ -70,7 +74,7 @@ pip install torch-geometric
 
 # Install other requirements
 echo "📚 Installing additional requirements..."
-pip install -r requirements_jupyter.txt
+pip install -r requirements_complete.txt
 
 # Install Jupyter extensions
 echo "🔧 Installing Jupyter extensions..."
@@ -100,8 +104,8 @@ echo ""
 echo "📋 Next steps:"
 echo "1. Activate the environment: source venv_jupyter/bin/activate"
 echo "2. Start JupyterLab: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
-echo "3. Open LogGraph_SSL_HighPerformance_Training.ipynb"
-echo "4. Run cells sequentially (start with Section 10: Setup Verification)"
+echo "3. Open LogGraph_SSL_Complete_Training.ipynb"
+echo "4. Run cells sequentially starting from the first cell"
 echo ""
 echo "🌐 Access JupyterLab from your browser:"
 echo "http://your-server-ip:8888 (replace with your actual server IP)"
@@ -110,7 +114,7 @@ echo "💡 Tips:"
 echo "- Monitor GPU usage with: nvidia-smi"
 echo "- The notebook includes real-time monitoring dashboards"
 echo "- Training will take 2-4 hours on a 24GB GPU"
-echo "- Run validation first: python3 validate_setup.py"
+echo "- Run local validation first: python3 test_notebook_locally.py"
 echo ""
 echo "� To update the code from GitHub:"
 echo "git pull origin main"
