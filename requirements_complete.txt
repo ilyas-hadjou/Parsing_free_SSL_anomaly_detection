@@ -1,0 +1,34 @@
+# LogGraph-SSL Complete Training Notebook Requirements
+# For high-performance training on RTX 4090 with CUDA 11.8
+
+# Core PyTorch with CUDA support
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# PyTorch Geometric for GNN operations
+torch-geometric>=2.3.0
+
+# Core data science libraries
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+
+# Visualization and plotting
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Progress tracking and utilities
+tqdm>=4.62.0
+networkx>=2.6.0
+
+# Jupyter notebook extensions
+ipywidgets>=8.0.0
+jupyter-dash>=0.4.0
+
+# System monitoring
+psutil>=5.8.0
+
+# Additional utilities
+pyyaml>=6.0
