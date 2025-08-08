@@ -1,0 +1,12 @@
+{
+  "dataset_info": {
+    "total_messages": 20000,
+    "normal_messages": 19390,
+    "anomalous_messages": 610,
+    "anomaly_rate": 0.0305
+  },
+  "evaluation_timestamp": "20250807_152819",
+  "model_path": "outputs/loggraph_ssl_20250807_143947/best_model.pth",
+  "detection_methods": {},
+  "recommendations": []
+}

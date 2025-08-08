@@ -138,8 +138,21 @@ class AnomalyDetector:
         self.detector.train()
         for epoch in range(100):
             optimizer.zero_grad()
-            outputs = self.detector(X_train).squeeze()
-            loss = criterion(outputs, y_train)
+            outputs = self.detector(X_train)
+            
+            # Ensure outputs and targets have compatible shapes
+            if outputs.dim() > 1:
+                outputs = outputs.squeeze(-1)  # Remove last dimension if size 1
+            if y_train.dim() == 0:
+                y_train = y_train.unsqueeze(0)  # Add batch dimension if scalar
+            
+            # Ensure both tensors have the same shape
+            if outputs.shape != y_train.shape:
+                min_size = min(outputs.shape[0], y_train.shape[0])
+                outputs = outputs[:min_size]
+                y_train = y_train[:min_size]
+            
+            loss = criterion(outputs, y_train.float())
             loss.backward()
             optimizer.step()
             

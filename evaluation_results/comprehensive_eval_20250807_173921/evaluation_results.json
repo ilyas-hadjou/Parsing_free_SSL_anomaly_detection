@@ -1,0 +1,42 @@
+{
+  "model_config": {
+    "input_dim": 5797,
+    "hidden_dims": [
+      64,
+      32
+    ],
+    "output_dim": 32,
+    "encoder_type": "gat",
+    "num_heads": 4,
+    "dropout": 0.3
+  },
+  "test_data_info": {
+    "num_messages": 20000,
+    "num_anomalies": 610,
+    "anomaly_rate": 0.0305
+  },
+  "ssl_tasks": {
+    "embedding_variance": 0.02833566814661026,
+    "cosine_similarity": 0.9764726758003235,
+    "embedding_norm": 5.647911071777344,
+    "edge_prediction_auc": 0.5232924999999999,
+    "node_classification_accuracy": 0.5778122544288635,
+    "num_nodes": 5796,
+    "num_edges": 85440
+  },
+  "anomaly_detection": {
+    "isolation_forest": {
+      "error": "Found input variables with inconsistent numbers of samples: [20000, 5796]"
+    },
+    "one_class_svm": {
+      "error": "Found input variables with inconsistent numbers of samples: [20000, 5796]"
+    },
+    "reconstruction_error": {
+      "error": "Found input variables with inconsistent numbers of samples: [20000, 5796]"
+    },
+    "statistical_distance": {
+      "error": "Found input variables with inconsistent numbers of samples: [20000, 5796]"
+    }
+  },
+  "evaluation_timestamp": "2025-08-07T17:39:21.874766"
+}

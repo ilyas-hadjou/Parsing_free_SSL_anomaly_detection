@@ -1,0 +1,2 @@
+Category,Method,Accuracy,Precision,Recall,F1 Score,AUC Score
+Anomaly Detection,isolation_forest,0.7315,0.0000,0.0000,0.0000,0.5000

@@ -1,0 +1,11 @@
+{
+  "input_dim": 5797,
+  "hidden_dims": [
+    64,
+    32
+  ],
+  "output_dim": 32,
+  "encoder_type": "gat",
+  "num_heads": 4,
+  "dropout": 0.3
+}

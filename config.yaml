@@ -4,10 +4,10 @@
 MODEL:
   input_dim: null  # Will be set automatically based on data
   hidden_dims: [128, 64]
-  output_dim: 32
-  encoder_type: "gcn"  # Options: gcn, gat, sage
+  output_dim: 64
+  encoder_type: "gat"  # Options: gcn, gat, sage
   num_heads: 8  # For GAT only
-  dropout: 0.1
+  dropout: 0.5  # Increased dropout to prevent overfitting
   activation: "relu"  # Options: relu, gelu, tanh
 
 # Graph Construction
@@ -43,9 +43,9 @@ SSL_TASKS:
 
 # Training Configuration
 TRAINING:
-  learning_rate: 0.001
-  weight_decay: 0.00001
-  num_epochs: 100
+  learning_rate: 0.0001  # Much lower learning rate
+  weight_decay: 0.001  # Strong L2 regularization
+  num_epochs: 50  # Fewer epochs to prevent overfitting
   batch_size: 32
   early_stopping:
     enabled: true

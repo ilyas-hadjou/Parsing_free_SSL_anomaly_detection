@@ -1,0 +1,37 @@
+{
+  "dataset": "benchmark",
+  "timestamp": "2025-08-07T15:16:13.688740",
+  "model_config": {
+    "input_dim": 10001,
+    "output_dim": 64,
+    "encoder_type": "gat"
+  },
+  "results": {
+    "representation_quality": {
+      "embedding_variance": 0.000835380342323333,
+      "embedding_norm": 0.7371863126754761,
+      "mean_cosine_similarity": 0.9930505752563477,
+      "std_cosine_similarity": 0.008730517700314522
+    },
+    "ssl_tasks": {
+      "masked_node_prediction_loss": 0.0008474469650536776,
+      "edge_prediction_loss": 0.7255308628082275,
+      "edge_prediction_auc": 0.11009417521294662,
+      "node_classification_loss": 1.3390898704528809,
+      "node_classification_accuracy": 0.029199998825788498
+    },
+    "anomaly_detection": {
+      "neural": {
+        "error": "Target size (torch.Size([1])) must be the same as input size (torch.Size([]))"
+      },
+      "isolation_forest": {
+        "accuracy": 0.72,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "auc_score": 0.5,
+        "threshold": 0.0
+      }
+    }
+  }
+}
