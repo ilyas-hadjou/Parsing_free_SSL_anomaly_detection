@@ -76,7 +76,10 @@ pip install -r requirements_jupyter.txt
 echo "🔧 Installing Jupyter extensions..."
 pip install jupyter-dash
 pip install ipywidgets
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+# Try to install lab extension (may fail in some environments - non-critical)
+echo "📦 Attempting to install JupyterLab widget manager..."
+jupyter labextension install @jupyter-widgets/jupyterlab-manager 2>/dev/null || echo "⚠️  JupyterLab extension install failed (non-critical - widgets will still work)"
 
 # Verify installations
 echo "✅ Verifying installations..."
