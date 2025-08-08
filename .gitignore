@@ -1,0 +1,37 @@
+# Large data files (too big for GitHub)
+HDFS_1.tar.gz
+HDFS.log
+
+# Virtual environments
+.venv/
+venv/
+venv_jupyter/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training outputs
+outputs/
+*.png
+*.log
+training_history.png
+
+# Evaluation results (can be regenerated)
+evaluation_results/
+comprehensive_evaluation/
