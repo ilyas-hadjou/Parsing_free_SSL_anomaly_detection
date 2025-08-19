@@ -147,6 +147,19 @@ def preprocess_log_message(message: str) -> str:
     return message
 
 
+def preprocess_logs(log_messages: List[str]) -> List[str]:
+    """
+    Preprocess a list of log messages.
+    
+    Args:
+        log_messages: List of raw log messages
+        
+    Returns:
+        List of preprocessed log messages
+    """
+    return [preprocess_log_message(message) for message in log_messages]
+
+
 def save_checkpoint(model: nn.Module, 
                    optimizer: torch.optim.Optimizer,
                    epoch: int,
